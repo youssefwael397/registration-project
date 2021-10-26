@@ -1,5 +1,5 @@
 // fetch data from api using fetch
-const api_path = "http://localhost/mounir/api/read.php";
+const api_path = "http://localhost/mounir/back/api/read.php";
 
 async function getUsers() {
     try {
