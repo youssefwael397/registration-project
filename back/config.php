@@ -34,10 +34,11 @@ class User {
         // create query
         $query = 'INSERT INTO ' .
         $this->table . 
-        'SET 
-            id = :id,
-            name = :name,
-            img = :img;
+        ' (id, name, img)
+        values( 
+            :id,
+            :name,
+            :img );
         ';
         
         // prepare statement

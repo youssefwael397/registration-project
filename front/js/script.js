@@ -1,35 +1,34 @@
-class MyHeader extends HTMLElement {
-  connectedCallback() {
-    this.innerHTML = `
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="#">Registration</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+const myForm = document.getElementById('myForm');
+myForm.addEventListener('submit', async function (e) {
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home </a>
-            </li>
-            <li class="nav-item admin mx-auto">
-              <a class="nav-link" href="admin.html">Admin</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-        `
-  }
-}
-customElements.define('my-header', MyHeader); // define custom header
+    var url = "http://localhost/mounir/back/api/create.php";
+    var id = document.getElementById('id').value;
+    var name = document.getElementById('name').value;
+    var img = document.getElementById('img').value;
 
+    data = {
+        "id": id,
+        "name": name,
+        "img": img
+    }
+
+
+
+    fetch(url,
+        {
+            method: "POST",
+            body: JSON.stringify(data),
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }
+    ).then(response => response.json())
+        .then(response => {
+            console.log(response)
+        })
+        .catch((err) => {
+            console.log(err)
+        });
+
+});

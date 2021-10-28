@@ -16,34 +16,47 @@
     <my-header></my-header>
     <div class="container">
       <p class="fs-4 fw-bold text-center text-primary">Regestration Form</p>
-      <form class="form text-center mx-auto" action="#">
+      <form class="form text-center mx-auto" action="#" id="myForm">
         <input
           class="input-group-text form-control text-center mx-auto w-50 my-2"
           type="text"
           name="name"
           id="name"
           placeholder="Enter your name"
+          required
+        />
+        <input
+          class="input-group-text form-control text-center mx-auto w-50 my-2"
+          type="number"
+          maxlength="14"
+          minlength="14"
+          name="id"
+          id="id"
+          placeholder="Enter your id"
+          required
         />
         <input
           class="input-group-text form-control text-center mx-auto w-50 my-2"
           type="text"
-          name="id"
-          id="id"
-          placeholder="Enter your id"
+          name="img"
+          id="img"
+          placeholder="Enter your img src"
+          required
         />
-        <label for="inputGroupFile01 fs-4 fw-bold">Choose your id image</label>
+        <!-- <label for="inputGroupFile01 fs-4 fw-bold">Choose your id image</label>
         <input
           type="file"
           class="input-group-text custom-file-input mx-auto"
           value="Choose id image"
           id="inputGroupFile01"
-        />
+        /> -->
         <button class="btn btn-primary mx-auto text-center my-2" type="submit">
-          submit
+          send data
         </button>
       </form>
     </div>
 
+    <script src="js/header.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
