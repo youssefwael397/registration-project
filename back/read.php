@@ -1,19 +1,13 @@
 <?php
+
+include_once './database.php';
+
 // headers
 header("Content-Type: JSON");
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: GET, POST");
+header("Access-Control-Allow-Methods: GET");
 header("Access-Control-Allow-Headers: X-Requested-with");
 
-// DB params
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "registration";
-$table = 'users';
-
-// connect to database
-$conn = mysqli_connect($servername,$username,$password,$dbname);
 
 $response = array();
 

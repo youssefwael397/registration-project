@@ -1,18 +1,17 @@
 const myForm = document.getElementById('myForm');
 myForm.addEventListener('submit', async function (e) {
 
+    e.preventDefault();
     var url = "http://localhost/mounir/back/api/create.php";
     var id = document.getElementById('id').value;
     var name = document.getElementById('name').value;
-    var img = document.getElementById('img').value;
+    // var img = document.getElementById('img').value;
 
     data = {
         "id": id,
         "name": name,
-        "img": img
+        "img": ''
     }
-
-
 
     fetch(url,
         {
@@ -30,5 +29,9 @@ myForm.addEventListener('submit', async function (e) {
         .catch((err) => {
             console.log(err)
         });
+
+    myForm.reset();
+
+
 
 });
