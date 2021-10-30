@@ -16,7 +16,8 @@ const handleChange = () => {
                     var temp = "";
                     var count = 1;
                     data.map(user => {
-                        if (user.name.includes(search.value.toLowerCase()) || user.id.includes(search.value)) {
+                        user.name.toLowerCase();
+                        if (user.name.toLowerCase().includes(search.value.toLowerCase()) || user.id.includes(search.value)) {
                             temp += '<tr>';
                             temp += '<th scope="row">' + count++ + '</th>';
                             temp += '<td>' + user.id + '</td>';
