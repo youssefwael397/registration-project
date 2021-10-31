@@ -1,4 +1,5 @@
 const myForm = document.getElementById('myForm');
+document.querySelector('li .home').classList.add('active');
 myForm.addEventListener('submit', async function (e) {
 
     e.preventDefault();

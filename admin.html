@@ -20,16 +20,59 @@
   </head>
   <body>
     <my-header></my-header>
+    <div id="my-container">
+      <!-- login form -->
+      <h3 id="welcome" class="text-center text-primary my-1">
+        Sign in to show table of data.
+      </h3>
+      <form class="mx-auto w-50 my-2" id="signInForm">
+        <!-- Email input -->
+        <div class="form-outline mb-4 signin">
+          <label class="form-label" for="username">Email</label>
+          <input
+            type="email"
+            id="username"
+            placeholder="email"
+            name="username"
+            class="form-control"
+          />
+        </div>
+
+        <!-- Password input -->
+        <div class="form-outline mb-4 signin">
+          <label class="form-label" for="password" id="passLabel"
+            >Password</label
+          >
+          <input
+            type="password"
+            id="password"
+            placeholder="password"
+            name="password"
+            class="form-control"
+          />
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary w-100 btn-block signin">
+          Sign in
+        </button>
+      </form>
+      <!-- login form -->
+
+
+      
+
+    </div>
     <div id="myDiv" class="container w-100 input-group">
-      <div class="mt-3 w-100 d-flex">
+      <div class="mt-3 w-100 d-flex" id="searchContainer">
         <input
           type="text"
           class="form-control w-90"
           id="search"
           placeholder="search for user"
           onkeyup="handleChange()"
-        />
-        <button class="btn btn-primary w-10">
+         />
+        <button class="btn btn-primary w-10" id="searchButton">
           <i class="fas fa-search"></i>
         </button>
       </div>
@@ -46,20 +89,33 @@
         <tbody id="myTbody"></tbody>
       </table>
     </div>
+    <div
+      aria-live="polite"
+      aria-atomic="true"
+      style="position: relative; min-height: 200px"
+    >
+     <!-- toast -->
+     <div style="position: relative; min-height: 200px;" data-autohide='false' >
+      <div class="toast" style="position: absolute; top: 0; right: 0;">
+        <div class="toast-header fw-bold">
+          login successfully
+        </div>
+        <div class="toast-body text-success">
+          Hello, in admin panel.
+        </div>
+      </div>
+    </div>
+  <!-- toast --> 
 
     <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
     <script src="js/header.js"></script>
